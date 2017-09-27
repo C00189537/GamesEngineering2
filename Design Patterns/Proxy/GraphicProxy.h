@@ -1,6 +1,5 @@
 #pragma once
 #include "Graphic.h"
-#include "IGraphic.h"
 
 class GraphicProxy : public IGraphic
 {
