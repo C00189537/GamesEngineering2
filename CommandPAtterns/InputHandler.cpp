@@ -6,23 +6,17 @@ void InputHandler::handleInput()
 	SDL_Event event;
 	while (SDL_PollEvent(&event))
 	{
-		switch (event.type)
+		switch (event.key.keysym.sym)
 		{
 		case SDLK_1:
-		{
 			buttonX_->execute();
-		}
-		break;
+			break;
 		case SDLK_2:
-		{
-			buttonX_->undo();
-		}
-		break;
+			buttonY_->execute();
+			break;
 		case SDLK_3:
-		{
 			buttonX_->redo();
-		}
-		break;
+			break;
 		default:
 			break;
 		}
