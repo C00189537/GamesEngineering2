@@ -11,5 +11,6 @@ public:
 	virtual void redo() = 0;
 
 protected:
+	//Encapsulates the commands
 	Command(){}
 };

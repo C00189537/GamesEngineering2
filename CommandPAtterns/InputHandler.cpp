@@ -9,6 +9,9 @@ void InputHandler::handleInput()
 		switch (event.key.keysym.sym)
 		{
 		case SDLK_1:
+			//The client sends the request to the invoker.
+			//The invoker carries out the request by performing execute.
+			//The invoker sends the command to the reciever
 			buttonX_->execute();
 			break;
 		case SDLK_2:
