@@ -3,6 +3,8 @@
 #define IDLE_H_
 
 #include "State.h"
+#include <thread>
+#include <chrono>
 
 class Idle : public State
 {
