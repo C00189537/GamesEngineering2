@@ -10,7 +10,7 @@ public:
 	void setPoint(SDL_Point pos) { (this->vel = pos); }
 	std::string getID() { return id; }
 
-	void setInt() {}
+	void setInt(int val) {}
 	int getInt() { return 0; }
 
 

@@ -3,6 +3,7 @@
 #include "SDL.h"
 #include "RenderSystem.h"
 #include "AISystem.h"
+#include "ControlSystem.h"
 
 void setupEntity(Entity e, int x, int y, int health);
 
@@ -32,17 +33,18 @@ int main(int argc, char* argv[])
 	cat.addComponent(new HealthComponent());
 	dog.addComponent(new HealthComponent());
 	alien.addComponent(new HealthComponent());
+	
+	//Control
+	player.addComponent(new ControlComponent());
 
 	setupEntity(player, 100, 100, 100);
 	setupEntity(cat, 200, 200, 10);
 	setupEntity(dog, 300, 300, 20);
 	setupEntity(alien, 400, 400, 200);
 
-	/*cat.getComponents().at(0)->setPoint({ 20, 20 });
-	dog.getComponents().at(0)->setPoint({ 30, 30 });
-	alien.getComponents().at(0)->setPoint({ 40, 40 });*/
 
-	//
+
+	//Systems
 
 	RenderSystem rs(renderer);
 	rs.addEntity(&player);
@@ -55,7 +57,8 @@ int main(int argc, char* argv[])
 	as.addEntity(&dog);
 	as.addEntity(&alien);
 
-	
+	ControlSystem cs;
+	cs.addEntity(&player);
 
 	std::cout << "Game Loop Starting....." << std::endl;
 	std::string game = "Running";
@@ -66,6 +69,7 @@ int main(int argc, char* argv[])
 		
 		rs.update();
 		as.update();
+		cs.update();
 		
 		SDL_RenderPresent(renderer);
 	}
