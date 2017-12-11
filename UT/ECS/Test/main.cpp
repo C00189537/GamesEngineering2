@@ -6,10 +6,10 @@
 int main()
 {
 	HealthComponent *hc = new HealthComponent();
-
+	bool alive = true;
 	bool healthUp = false;
 
-	while (hc->getInt() > 0)
+	while (alive)
 	{
 		//In lava
 		if (!healthUp)
@@ -25,9 +25,13 @@ int main()
 			assert(hc->getInt() <= 100);
 			std::cout << hc->getInt() << std::endl;
 		}
+		if (hc->getInt() <= 0)
+		{
+			alive = false;
+			assert(alive == false);
+		}
 	}
 	std::cout << "Dead" << std::endl;
-	hc->setInt(50);
 	std::cout << "Game Over" << std::endl;
 
 	system("PAUSE");

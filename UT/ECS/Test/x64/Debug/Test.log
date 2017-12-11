@@ -1,1 +1,2 @@
-﻿C:\Users\foxbl\Desktop\GamesEngineering2\UT\ECS\Test\Test.vcxproj : error MSB4057: The target "Deploy" does not exist in the project.
+﻿  main.cpp
+  Test.vcxproj -> C:\Users\foxbl\Desktop\GamesEngineering2\UT\ECS\x64\Debug\Test.exe
