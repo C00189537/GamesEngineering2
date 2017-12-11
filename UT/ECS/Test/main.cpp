@@ -27,8 +27,8 @@ int main()
 		}
 		if (hc->getInt() <= 0)
 		{
+			assert(alive == true);
 			alive = false;
-			assert(alive == false);
 		}
 	}
 	std::cout << "Dead" << std::endl;
