@@ -7,31 +7,37 @@ int main()
 {
 	HealthComponent *hc = new HealthComponent();
 	bool alive = true;
+	bool gameOver = false;
 	bool healthUp = false;
 
 	while (alive)
 	{
-		//In lava
+		//Test if in lava
 		if (!healthUp)
 		{
 			hc->setInt(-5);
 			assert(hc->getInt() >= 0);
 			std::cout << hc->getInt() << std::endl;
 		}
-		//In healing pool
+		//Test if in healing pool
 		else
 		{
 			hc->setInt(5);
 			assert(hc->getInt() <= 100);
 			std::cout << hc->getInt() << std::endl;
 		}
+		//Test if alive
 		if (hc->getInt() <= 0)
 		{
 			assert(alive == true);
 			alive = false;
+			std::cout << "Dead" << std::endl;
+			gameOver = true;
 		}
 	}
-	std::cout << "Dead" << std::endl;
+	
+	//Test For Game Over
+	assert(gameOver);
 	std::cout << "Game Over" << std::endl;
 
 	system("PAUSE");
