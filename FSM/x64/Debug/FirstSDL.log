@@ -1,3 +1,7 @@
-﻿  Idle.cpp
+﻿  main.cpp
+  InputHandler.cpp
+  Idle.cpp
+  Animation.cpp
+  Generating Code...
   FirstSDL.vcxproj -> C:\Users\foxbl\Desktop\GamesEngi2\GamesEngineering2\FSM\x64\Debug\FirstSDL.exe
   FirstSDL.vcxproj -> C:\Users\foxbl\Desktop\GamesEngi2\GamesEngineering2\FSM\x64\Debug\FirstSDL.pdb (Partial PDB)
