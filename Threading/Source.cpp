@@ -25,26 +25,29 @@ void producer()
 {
 	int a[n] = { 1, 2, 3, 4, 5 };
 	bool run = true;
-	m_lock.lock();
 	while (run)
 	{
+		
 		while (p < n)
-		{
+		{			
 			std::cout << "ID P: " << std::this_thread::get_id()  << std::endl;
 			std::this_thread::sleep_for(std::chrono::seconds(2));
 			while (!(p == c))
 			{
 				//std::cout << "Spinning: " << std::endl;
 			}
+			//lock here
+			m_lock.lock();
 			buf = a[p];
+			m_lock.unlock();
 			std::cout << a[p] << " deposited in buffer" << std::endl;
 			p++;
 		}
 		std::cout << "Production Finished" << std::endl;
 		run = false;
-		
 	}
-	m_lock.unlock();
+	
+	
 }
 void consumer()
 {
