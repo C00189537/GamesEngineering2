@@ -93,10 +93,11 @@ void consumer()
 }
 void P(int &s)
 {
-	while (s > 0)
+	while (s <= 0)
 	{
-		s--;
+		std::cout << "Spinning" << std::endl;
 	}
+	s--;
 }
 
 void V(int &s)
